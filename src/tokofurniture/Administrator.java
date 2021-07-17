@@ -290,13 +290,21 @@ public class Administrator extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Semua data harus terisi!!!");
         } else{
-            TokoFurnitureDB.insertIntoDatabase(
-                   namaBarangTextField.getText(), 
-                   Integer.valueOf(hargaBarangTextField.getText()), 
-                   Integer.valueOf(stokTextField1.getText()), 
-                   deskripsiTextArea.getText(), 
-                   fimage
-            );
+            try{
+                TokoFurnitureDB.insertIntoDatabase(
+                       namaBarangTextField.getText(), 
+                       Integer.valueOf(hargaBarangTextField.getText()), 
+                       Integer.valueOf(stokTextField1.getText()), 
+                       deskripsiTextArea.getText(), 
+                       fimage
+                );
+            } catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(
+                        null, 
+                        "Pastikan jenis data yang dimasukkan benar " 
+                        + ex.getMessage()
+                );
+            }
 
             administrator.showDataToTableAdmin(tableAdmin);
             namaBarangTextField.setText("");
@@ -391,13 +399,22 @@ public class Administrator extends javax.swing.JFrame {
 
     private void editButtinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtinActionPerformed
         // TODO add your handling code here:
-        TokoFurnitureDB.updateToDatabase(
-            Integer.valueOf(labelIdBarang.getText()),
-            namaBarangTextField.getText(), 
-            Integer.valueOf(hargaBarangTextField.getText()), 
-            Integer.valueOf(stokTextField1.getText()),
-            deskripsiTextArea.getText(), fimage
-        );
+        
+        try{
+            TokoFurnitureDB.updateToDatabase(
+                Integer.valueOf(labelIdBarang.getText()),
+                namaBarangTextField.getText(), 
+                Integer.valueOf(hargaBarangTextField.getText()), 
+                Integer.valueOf(stokTextField1.getText()),
+                deskripsiTextArea.getText(), fimage
+            );
+        }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(
+                null, 
+                "Pastikan jenis data yang dimasukkan benar " 
+                + ex.getMessage()
+            );
+        }
         administrator.showDataToTableAdmin(tableAdmin);
         
         namaBarangTextField.setText("");
