@@ -6,40 +6,21 @@
 package tokofurniture;
 
 import java.awt.CardLayout;
+import java.awt.Image;
+import javax.swing.JOptionPane;
 
-
-
-
-/**
- *
- * @author HP KOMPUTER
- */
 public class Home extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Home
-     */
-    CardLayout cardLayout;
+    private final CardLayout cardLayout;
+    protected boolean isLogin = false;
+    private DrawTable homepageTable = new DrawTable();
+    ConnectionClass login = new ConnectionClass(isLogin);
+    
     
     public Home() {
         initComponents();
-        
-        buttonHome.setContentAreaFilled(false);
-        buttonHome.setBorderPainted(false);
-        buttonHome.setOpaque(false);
-        
-        buttonAdmin.setContentAreaFilled(false);
-        buttonAdmin.setBorderPainted(false);
-        buttonAdmin.setOpaque(false);
-        
-        buttonContact.setContentAreaFilled(false);
-        buttonContact.setBorderPainted(false);
-        buttonContact.setOpaque(false);
-        
-        buttonAbout.setContentAreaFilled(false);
-        buttonAbout.setBorderPainted(false);
-        buttonAbout.setOpaque(false);
-        
+        System.out.println(login.isLogin);
+        homepageTable.showDataToTableHome(tableHome);
         cardLayout = (CardLayout) (panelCard.getLayout());
         
     }
@@ -55,39 +36,35 @@ public class Home extends javax.swing.JFrame {
 
         panelCard = new javax.swing.JPanel();
         panelHome = new javax.swing.JPanel();
-        panelHomeLabel = new javax.swing.JLabel();
-        buttonKonfirmasiPembayaran = new javax.swing.JButton();
-        panelAdmin = new javax.swing.JPanel();
+        scrollHome = new javax.swing.JScrollPane();
+        tableHome = new javax.swing.JTable();
+        labelPhotoHome = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textAreaDeskripsi = new javax.swing.JTextArea();
+        panelLoginAdmin = new javax.swing.JPanel();
         panelAdminLabel = new javax.swing.JLabel();
         usernameTextField = new javax.swing.JTextField();
         passTextField = new javax.swing.JPasswordField();
         buttonLogin = new javax.swing.JButton();
-        usernameLogoLabel = new javax.swing.JLabel();
         passLogoLabel = new javax.swing.JLabel();
-        panelAdminDashboard = new javax.swing.JPanel();
-        panelAdminDashboardLabel = new javax.swing.JLabel();
+        usernameLogoLabel1 = new javax.swing.JLabel();
         panelContact = new javax.swing.JPanel();
         panelContactLabel = new javax.swing.JLabel();
         panelContactWhatsappLogo = new javax.swing.JLabel();
         panelContactWhatsappNo = new javax.swing.JLabel();
+        panelContactLabel1 = new javax.swing.JLabel();
         panelAbout = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
-        btnHome = new javax.swing.JPanel();
-        spHome = new javax.swing.JPanel();
         buttonHome = new javax.swing.JButton();
-        btnAdmin = new javax.swing.JPanel();
-        spAdmin = new javax.swing.JPanel();
         buttonAdmin = new javax.swing.JButton();
-        btnContact = new javax.swing.JPanel();
-        spContact = new javax.swing.JPanel();
-        buttonContact = new javax.swing.JButton();
-        btnAbout = new javax.swing.JPanel();
-        spAbout = new javax.swing.JPanel();
+        buttonPemesanan = new javax.swing.JButton();
         buttonAbout = new javax.swing.JButton();
         panelLogo = new javax.swing.JPanel();
         labelLogo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         panelCard.setBackground(new java.awt.Color(255, 255, 255));
@@ -95,51 +72,83 @@ public class Home extends javax.swing.JFrame {
 
         panelHome.setBackground(new java.awt.Color(176, 187, 205));
 
-        panelHomeLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        panelHomeLabel.setForeground(new java.awt.Color(237, 246, 255));
-        panelHomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelHomeLabel.setText("TOKO FURNITURE");
-
-        buttonKonfirmasiPembayaran.setText("KONFIRMASI PEMBAYARAN");
-        buttonKonfirmasiPembayaran.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonKonfirmasiPembayaranActionPerformed(evt);
+        scrollHome.setBackground(new java.awt.Color(176, 187, 205));
+        scrollHome.setForeground(new java.awt.Color(176, 187, 205));
+        scrollHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                scrollHomeMouseClicked(evt);
             }
         });
+
+        tableHome.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "NAMA BARANG", "HARGA BARANG", "STOK", "DESKRIPSI", "GAMBAR"
+            }
+        ));
+        tableHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableHomeMouseClicked(evt);
+            }
+        });
+        scrollHome.setViewportView(tableHome);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("GAMBAR BARANG");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("DESKRIPSI BARANG");
+
+        textAreaDeskripsi.setColumns(20);
+        textAreaDeskripsi.setRows(5);
+        jScrollPane2.setViewportView(textAreaDeskripsi);
 
         javax.swing.GroupLayout panelHomeLayout = new javax.swing.GroupLayout(panelHome);
         panelHome.setLayout(panelHomeLayout);
         panelHomeLayout.setHorizontalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollHome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
             .addGroup(panelHomeLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(buttonKonfirmasiPembayaran)
-                .addContainerGap(483, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelHomeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelHomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
+                .addGap(27, 27, 27)
+                .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(labelPhotoHome, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(112, 112, 112)
+                .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelHomeLayout.setVerticalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelHomeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelHomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 428, Short.MAX_VALUE)
-                .addComponent(buttonKonfirmasiPembayaran)
-                .addContainerGap())
+                .addComponent(scrollHome, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPhotoHome, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
         );
 
         panelCard.add(panelHome, "panelHome");
 
-        panelAdmin.setBackground(new java.awt.Color(176, 187, 205));
-        panelAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelLoginAdmin.setBackground(new java.awt.Color(176, 187, 205));
+        panelLoginAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelAdminLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         panelAdminLabel.setForeground(new java.awt.Color(237, 246, 255));
         panelAdminLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panelAdminLabel.setText("LOGIN ADMIN");
-        panelAdmin.add(panelAdminLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 235, 39));
+        panelLoginAdmin.add(panelAdminLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 235, 39));
 
         usernameTextField.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         usernameTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -150,13 +159,13 @@ public class Home extends javax.swing.JFrame {
                 usernameTextFieldActionPerformed(evt);
             }
         });
-        panelAdmin.add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 295, 35));
+        panelLoginAdmin.add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 295, 35));
 
         passTextField.setText("Password");
         passTextField.setActionCommand("<Not Set>");
         passTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 111, 180)));
         passTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        panelAdmin.add(passTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 163, 295, 34));
+        panelLoginAdmin.add(passTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 163, 295, 34));
 
         buttonLogin.setBackground(new java.awt.Color(40, 111, 180));
         buttonLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -168,43 +177,37 @@ public class Home extends javax.swing.JFrame {
                 buttonLoginActionPerformed(evt);
             }
         });
-        panelAdmin.add(buttonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 235, 294, 40));
-
-        usernameLogoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        usernameLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tokofurniture/images/icons8_user_30px.png"))); // NOI18N
-        panelAdmin.add(usernameLogoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 100, 48, 35));
+        panelLoginAdmin.add(buttonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 235, 294, 40));
 
         passLogoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        passLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tokofurniture/images/icons8_password_30px.png"))); // NOI18N
-        panelAdmin.add(passLogoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 163, 48, 35));
+        passLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_password_30px.png"))); // NOI18N
+        panelLoginAdmin.add(passLogoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 163, 48, 35));
 
-        panelCard.add(panelAdmin, "panelAdmin");
+        usernameLogoLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        usernameLogoLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_30px.png"))); // NOI18N
+        panelLoginAdmin.add(usernameLogoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 100, 48, 35));
 
-        panelAdminDashboard.setBackground(new java.awt.Color(176, 187, 205));
-        panelAdminDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panelAdminDashboardLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        panelAdminDashboardLabel.setForeground(new java.awt.Color(237, 246, 255));
-        panelAdminDashboardLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelAdminDashboardLabel.setText("ADMIN DASHBOARD");
-        panelAdminDashboard.add(panelAdminDashboardLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 260, 39));
-
-        panelCard.add(panelAdminDashboard, "panelAdminDashboard");
+        panelCard.add(panelLoginAdmin, "panelLoginAdmin");
 
         panelContact.setBackground(new java.awt.Color(176, 187, 205));
 
         panelContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         panelContactLabel.setForeground(new java.awt.Color(237, 246, 255));
         panelContactLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelContactLabel.setText("CONTACT US");
+        panelContactLabel.setText("HUBUNGI KAMI KE NOMOR WHATSAPP");
 
         panelContactWhatsappLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelContactWhatsappLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tokofurniture/images/icons8_whatsapp_50px.png"))); // NOI18N
+        panelContactWhatsappLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_whatsapp_50px.png"))); // NOI18N
 
         panelContactWhatsappNo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         panelContactWhatsappNo.setForeground(new java.awt.Color(237, 246, 255));
         panelContactWhatsappNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panelContactWhatsappNo.setText("0854-2212-9910");
+
+        panelContactLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel1.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel1.setText("DI BAWAH INI");
 
         javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
         panelContact.setLayout(panelContactLayout);
@@ -212,41 +215,43 @@ public class Home extends javax.swing.JFrame {
             panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContactLayout.createSequentialGroup()
                 .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelContactLayout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addComponent(panelContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelContactLayout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(panelContactWhatsappLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(200, Short.MAX_VALUE))
+                    .addComponent(panelContactLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelContactLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(panelContactLayout.createSequentialGroup()
+                .addGap(245, 245, 245)
+                .addComponent(panelContactWhatsappLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         panelContactLayout.setVerticalGroup(
             panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContactLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88)
                 .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelContactWhatsappLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(264, Short.MAX_VALUE))
+                .addContainerGap(398, Short.MAX_VALUE))
         );
 
         panelCard.add(panelContact, "panelContact");
 
-        panelAbout.setBackground(new java.awt.Color(176, 188, 247));
+        panelAbout.setBackground(new java.awt.Color(176, 187, 205));
 
         javax.swing.GroupLayout panelAboutLayout = new javax.swing.GroupLayout(panelAbout);
         panelAbout.setLayout(panelAboutLayout);
         panelAboutLayout.setHorizontalGroup(
             panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 786, Short.MAX_VALUE)
         );
         panelAboutLayout.setVerticalGroup(
             panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
 
         panelCard.add(panelAbout, "panelAbout");
@@ -254,161 +259,55 @@ public class Home extends javax.swing.JFrame {
         sidePanel.setBackground(new java.awt.Color(40, 111, 180));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnHome.setBackground(new java.awt.Color(34, 79, 141));
-        btnHome.setToolTipText("");
-
-        spHome.setBackground(new java.awt.Color(176, 187, 205));
-        spHome.setPreferredSize(new java.awt.Dimension(5, 40));
-        spHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonHome.setBackground(new java.awt.Color(237, 246, 255));
+        buttonHome.setBackground(new java.awt.Color(176, 187, 205));
         buttonHome.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        buttonHome.setForeground(new java.awt.Color(237, 246, 255));
+        buttonHome.setForeground(new java.awt.Color(40, 111, 180));
         buttonHome.setText("HOME");
         buttonHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonHomeActionPerformed(evt);
             }
         });
+        sidePanel.add(buttonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 150, 40));
 
-        javax.swing.GroupLayout btnHomeLayout = new javax.swing.GroupLayout(btnHome);
-        btnHome.setLayout(btnHomeLayout);
-        btnHomeLayout.setHorizontalGroup(
-            btnHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnHomeLayout.createSequentialGroup()
-                .addComponent(spHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(buttonHome, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        btnHomeLayout.setVerticalGroup(
-            btnHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(buttonHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        sidePanel.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 150, 40));
-
-        btnAdmin.setBackground(new java.awt.Color(34, 79, 141));
-        btnAdmin.setToolTipText("");
-
-        spAdmin.setBackground(new java.awt.Color(176, 187, 205));
-        spAdmin.setPreferredSize(new java.awt.Dimension(5, 40));
-        spAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonAdmin.setBackground(new java.awt.Color(237, 246, 255));
+        buttonAdmin.setBackground(new java.awt.Color(176, 187, 205));
         buttonAdmin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        buttonAdmin.setForeground(new java.awt.Color(237, 246, 255));
+        buttonAdmin.setForeground(new java.awt.Color(40, 111, 180));
         buttonAdmin.setText("ADMIN");
         buttonAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAdminActionPerformed(evt);
             }
         });
+        sidePanel.add(buttonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 150, 40));
 
-        javax.swing.GroupLayout btnAdminLayout = new javax.swing.GroupLayout(btnAdmin);
-        btnAdmin.setLayout(btnAdminLayout);
-        btnAdminLayout.setHorizontalGroup(
-            btnAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnAdminLayout.createSequentialGroup()
-                .addComponent(spAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-        btnAdminLayout.setVerticalGroup(
-            btnAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(btnAdminLayout.createSequentialGroup()
-                .addComponent(buttonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        sidePanel.add(btnAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 150, 40));
-
-        btnContact.setBackground(new java.awt.Color(34, 79, 141));
-        btnContact.setToolTipText("");
-
-        spContact.setBackground(new java.awt.Color(176, 187, 205));
-        spContact.setPreferredSize(new java.awt.Dimension(5, 40));
-        spContact.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonContact.setBackground(new java.awt.Color(237, 246, 255));
-        buttonContact.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        buttonContact.setForeground(new java.awt.Color(237, 246, 255));
-        buttonContact.setText("CONTACT");
-        buttonContact.addActionListener(new java.awt.event.ActionListener() {
+        buttonPemesanan.setBackground(new java.awt.Color(176, 187, 205));
+        buttonPemesanan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonPemesanan.setForeground(new java.awt.Color(40, 111, 180));
+        buttonPemesanan.setText("PEMESANAN");
+        buttonPemesanan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonContactActionPerformed(evt);
+                buttonPemesananActionPerformed(evt);
             }
         });
+        sidePanel.add(buttonPemesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 150, 40));
 
-        javax.swing.GroupLayout btnContactLayout = new javax.swing.GroupLayout(btnContact);
-        btnContact.setLayout(btnContactLayout);
-        btnContactLayout.setHorizontalGroup(
-            btnContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnContactLayout.createSequentialGroup()
-                .addComponent(spContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(buttonContact, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        btnContactLayout.setVerticalGroup(
-            btnContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spContact, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(btnContactLayout.createSequentialGroup()
-                .addComponent(buttonContact, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        sidePanel.add(btnContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 150, 40));
-
-        btnAbout.setBackground(new java.awt.Color(34, 79, 141));
-        btnAbout.setToolTipText("");
-
-        spAbout.setBackground(new java.awt.Color(176, 187, 205));
-        spAbout.setPreferredSize(new java.awt.Dimension(5, 40));
-        spAbout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonAbout.setBackground(new java.awt.Color(237, 246, 255));
+        buttonAbout.setBackground(new java.awt.Color(176, 187, 205));
         buttonAbout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        buttonAbout.setForeground(new java.awt.Color(237, 246, 255));
+        buttonAbout.setForeground(new java.awt.Color(40, 111, 180));
         buttonAbout.setText("ABOUT");
         buttonAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAboutActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout btnAboutLayout = new javax.swing.GroupLayout(btnAbout);
-        btnAbout.setLayout(btnAboutLayout);
-        btnAboutLayout.setHorizontalGroup(
-            btnAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnAboutLayout.createSequentialGroup()
-                .addComponent(spAbout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(btnAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnAboutLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(buttonAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)))
-        );
-        btnAboutLayout.setVerticalGroup(
-            btnAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spAbout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(btnAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnAboutLayout.createSequentialGroup()
-                    .addGap(0, 0, 0)
-                    .addComponent(buttonAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)))
-        );
-
-        sidePanel.add(btnAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 150, 40));
+        sidePanel.add(buttonAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 150, 40));
 
         panelLogo.setBackground(new java.awt.Color(40, 111, 180));
 
         labelLogo.setBackground(new java.awt.Color(40, 111, 180));
         labelLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tokofurniture/images/TF.png"))); // NOI18N
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TF.png"))); // NOI18N
 
         javax.swing.GroupLayout panelLogoLayout = new javax.swing.GroupLayout(panelLogo);
         panelLogo.setLayout(panelLogoLayout);
@@ -446,34 +345,23 @@ public class Home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+     
     private void buttonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHomeActionPerformed
         // TODO add your handling code here:
+        homepageTable.showDataToTableHome(tableHome);
         cardLayout.show(panelCard, "panelHome");
     }//GEN-LAST:event_buttonHomeActionPerformed
 
     private void buttonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAdminActionPerformed
         // TODO add your handling code here:
-        cardLayout.show(panelCard, "panelAdmin");
+        if(login.isLogin){
+           new Administrator().setVisible(true);
+        }
+        cardLayout.show(panelCard, "panelLoginAdmin");
     }//GEN-LAST:event_buttonAdminActionPerformed
-
-    private void buttonContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonContactActionPerformed
-        // TODO add your handling code here:
-        cardLayout.show(panelCard, "panelContact");
-    }//GEN-LAST:event_buttonContactActionPerformed
-
-    private void buttonAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAboutActionPerformed
-        // TODO add your handling code here:
-        cardLayout.show(panelCard, "panelAbout");
-    }//GEN-LAST:event_buttonAboutActionPerformed
-
-    private void buttonKonfirmasiPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKonfirmasiPembayaranActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonKonfirmasiPembayaranActionPerformed
 
     private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
         // TODO add your handling code here:
-       
     }//GEN-LAST:event_usernameTextFieldActionPerformed
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
@@ -482,9 +370,37 @@ public class Home extends javax.swing.JFrame {
         String pass = passTextField.getText();
         
         if ((user.equals("fikri") && (pass.equals("fikri")))) {
-            cardLayout.show(panelCard, "panelAdminDashboard");
-        } 
+            login.isLogin = true;
+            new Administrator().setVisible(true);
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Username atau Password salah silakan periksa kembali");
+        }
     }//GEN-LAST:event_buttonLoginActionPerformed
+
+
+    private void buttonPemesananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPemesananActionPerformed
+        // TODO add your handling code here:
+        new Pemesanan().setVisible(true);
+    }//GEN-LAST:event_buttonPemesananActionPerformed
+
+    private void tableHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableHomeMouseClicked
+        // TODO add your handling code here:  
+        homepageTable = new DrawTable(tableHome);
+        homepageTable.setDeskripsiTextArea(textAreaDeskripsi);
+        homepageTable.setLabelContaier(labelPhotoHome);
+        homepageTable.tableClickedHome();
+    }//GEN-LAST:event_tableHomeMouseClicked
+    
+    private void buttonAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAboutActionPerformed
+        // TODO add your handling code here:
+        cardLayout.show(panelCard, "panelAbout");
+    }//GEN-LAST:event_buttonAboutActionPerformed
+
+    private void scrollHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scrollHomeMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_scrollHomeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -515,6 +431,66 @@ public class Home extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -525,43 +501,36 @@ public class Home extends javax.swing.JFrame {
         
     }
     
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnAbout;
-    private javax.swing.JPanel btnAdmin;
-    private javax.swing.JPanel btnContact;
-    private javax.swing.JPanel btnHome;
     private javax.swing.JButton buttonAbout;
     private javax.swing.JButton buttonAdmin;
-    private javax.swing.JButton buttonContact;
     private javax.swing.JButton buttonHome;
-    private javax.swing.JButton buttonKonfirmasiPembayaran;
     private javax.swing.JButton buttonLogin;
+    private javax.swing.JButton buttonPemesanan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelLogo;
+    private javax.swing.JLabel labelPhotoHome;
     private javax.swing.JPanel panelAbout;
-    private javax.swing.JPanel panelAdmin;
-    private javax.swing.JPanel panelAdminDashboard;
-    private javax.swing.JLabel panelAdminDashboardLabel;
     private javax.swing.JLabel panelAdminLabel;
     private javax.swing.JPanel panelCard;
     private javax.swing.JPanel panelContact;
     private javax.swing.JLabel panelContactLabel;
+    private javax.swing.JLabel panelContactLabel1;
     private javax.swing.JLabel panelContactWhatsappLogo;
     private javax.swing.JLabel panelContactWhatsappNo;
     private javax.swing.JPanel panelHome;
-    private javax.swing.JLabel panelHomeLabel;
+    private javax.swing.JPanel panelLoginAdmin;
     private javax.swing.JPanel panelLogo;
     private javax.swing.JLabel passLogoLabel;
     private javax.swing.JPasswordField passTextField;
+    private javax.swing.JScrollPane scrollHome;
     private javax.swing.JPanel sidePanel;
-    private javax.swing.JPanel spAbout;
-    private javax.swing.JPanel spAdmin;
-    private javax.swing.JPanel spContact;
-    private javax.swing.JPanel spHome;
-    private javax.swing.JLabel usernameLogoLabel;
+    private javax.swing.JTable tableHome;
+    private javax.swing.JTextArea textAreaDeskripsi;
+    private javax.swing.JLabel usernameLogoLabel1;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
- private String username;
- private String pass;
+
 }
