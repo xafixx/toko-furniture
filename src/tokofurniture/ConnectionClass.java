@@ -45,5 +45,4 @@ public class ConnectionClass {
         
         return openConnection;
     }
-    
 }

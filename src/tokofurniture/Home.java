@@ -56,10 +56,11 @@ public class Home extends javax.swing.JFrame {
         sidePanel = new javax.swing.JPanel();
         buttonHome = new javax.swing.JButton();
         buttonAdmin = new javax.swing.JButton();
-        buttonPemesanan = new javax.swing.JButton();
+        buttonContact = new javax.swing.JButton();
         buttonAbout = new javax.swing.JButton();
         panelLogo = new javax.swing.JPanel();
         labelLogo = new javax.swing.JLabel();
+        buttonPemesanan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -278,16 +279,16 @@ public class Home extends javax.swing.JFrame {
         });
         sidePanel.add(buttonAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 150, 40));
 
-        buttonPemesanan.setBackground(new java.awt.Color(176, 187, 205));
-        buttonPemesanan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        buttonPemesanan.setForeground(new java.awt.Color(40, 111, 180));
-        buttonPemesanan.setText("PEMESANAN");
-        buttonPemesanan.addActionListener(new java.awt.event.ActionListener() {
+        buttonContact.setBackground(new java.awt.Color(176, 187, 205));
+        buttonContact.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonContact.setForeground(new java.awt.Color(40, 111, 180));
+        buttonContact.setText("CONTACT");
+        buttonContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonPemesananActionPerformed(evt);
+                buttonContactActionPerformed(evt);
             }
         });
-        sidePanel.add(buttonPemesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 150, 40));
+        sidePanel.add(buttonContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 150, 40));
 
         buttonAbout.setBackground(new java.awt.Color(176, 187, 205));
         buttonAbout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -298,7 +299,7 @@ public class Home extends javax.swing.JFrame {
                 buttonAboutActionPerformed(evt);
             }
         });
-        sidePanel.add(buttonAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 150, 40));
+        sidePanel.add(buttonAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 150, 40));
 
         panelLogo.setBackground(new java.awt.Color(40, 111, 180));
 
@@ -321,6 +322,17 @@ public class Home extends javax.swing.JFrame {
         );
 
         sidePanel.add(panelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 130, 80));
+
+        buttonPemesanan.setBackground(new java.awt.Color(176, 187, 205));
+        buttonPemesanan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        buttonPemesanan.setForeground(new java.awt.Color(40, 111, 180));
+        buttonPemesanan.setText("PEMESANAN");
+        buttonPemesanan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPemesananActionPerformed(evt);
+            }
+        });
+        sidePanel.add(buttonPemesanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -377,11 +389,10 @@ public class Home extends javax.swing.JFrame {
        
     }//GEN-LAST:event_buttonLoginActionPerformed
 
-
-    private void buttonPemesananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPemesananActionPerformed
+    private void buttonContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonContactActionPerformed
         // TODO add your handling code here:
-        new Pemesanan().setVisible(true);
-    }//GEN-LAST:event_buttonPemesananActionPerformed
+        new Contact().setVisible(true);
+    }//GEN-LAST:event_buttonContactActionPerformed
 
     private void tableHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableHomeMouseClicked
         // TODO add your handling code here:  
@@ -400,6 +411,11 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_scrollHomeMouseClicked
+
+    private void buttonPemesananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPemesananActionPerformed
+        // TODO add your handling code here:
+        new Pemesanan().setVisible(true);
+    }//GEN-LAST:event_buttonPemesananActionPerformed
 
     /**
      * @param args the command line arguments
@@ -503,6 +519,7 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAbout;
     private javax.swing.JButton buttonAdmin;
+    private javax.swing.JButton buttonContact;
     private javax.swing.JButton buttonHome;
     private javax.swing.JButton buttonLogin;
     private javax.swing.JButton buttonPemesanan;

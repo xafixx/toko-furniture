@@ -318,50 +318,34 @@ public class Administrator extends javax.swing.JFrame {
     private void buttonTambahGambarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTambahGambarActionPerformed
         // TODO add your handling code here:
         JFileChooser fc = new JFileChooser();
-        fc.showOpenDialog(this);
-        selectedImage = fc.getSelectedFile(); 
         
-        if (selectedImage != null) {
-            path = selectedImage.getAbsolutePath();
-            
-            ImageIcon image = new ImageIcon(
-                new ImageIcon(path).getImage().getScaledInstance(labelAddImage.getWidth(), 
-                labelAddImage.getHeight(), Image.SCALE_SMOOTH)
-            );
-            
-            labelAddImage.setIcon(image);
-            
-            try {
-                File imageicon = new File(path);
-                fimage = new FileInputStream(imageicon);          
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, ex);
-            }
-          
-        } else{
-            JOptionPane.showMessageDialog(null, "Wajib memasukkan gambar!!");
+        do{
             fc.showOpenDialog(this);
             selectedImage = fc.getSelectedFile();
-            
-            path = selectedImage.getAbsolutePath();
-            
-            ImageIcon image = new ImageIcon(
-                new ImageIcon(path).getImage().getScaledInstance(labelAddImage.getWidth(), 
-                labelAddImage.getHeight(), Image.SCALE_SMOOTH)
-            );
-            
-            labelAddImage.setIcon(image);
-            
-            try {
-            
-            System.out.println(path);
-                File imageicon = new File(path);
-                fimage = new FileInputStream(imageicon);          
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, ex);
+            if(selectedImage != null){
+                JOptionPane.showMessageDialog(null, "Gambar terpilih");
+            } else{
+                JOptionPane.showMessageDialog(null, "Harus memasukkan gambar");
             }
-        }
+        }while(selectedImage == null);
         
+
+        path = selectedImage.getAbsolutePath();
+            
+        ImageIcon image = new ImageIcon(
+            new ImageIcon(path).getImage().getScaledInstance(labelAddImage.getWidth(), 
+            labelAddImage.getHeight(), Image.SCALE_SMOOTH)
+        );
+            
+        labelAddImage.setIcon(image);
+            
+        try {
+            File imageicon = new File(path);
+            fimage = new FileInputStream(imageicon);          
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+ 
     }//GEN-LAST:event_buttonTambahGambarActionPerformed
 
     private void tableAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAdminMouseClicked
