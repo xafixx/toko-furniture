@@ -10,19 +10,16 @@ import java.awt.Image;
 import javax.swing.JOptionPane;
 
 public class Home extends javax.swing.JFrame {
-
-    private final CardLayout cardLayout;
-    protected boolean isLogin = false;
+    private CardLayout cardLayout;
     private DrawTable homepageTable = new DrawTable();
-    ConnectionClass login = new ConnectionClass(isLogin);
-    
+    protected boolean isLogin = false;
+    private ConnectionClass login = new ConnectionClass(isLogin);
     
     public Home() {
         initComponents();
         System.out.println(login.isLogin);
         homepageTable.showDataToTableHome(tableHome);
         cardLayout = (CardLayout) (panelCard.getLayout());
-        
     }
 
     /**
@@ -366,16 +363,18 @@ public class Home extends javax.swing.JFrame {
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
         // TODO add your handling code here:
-        String user = usernameTextField.getText();
-        String pass = passTextField.getText();
         
-        if ((user.equals("fikri") && (pass.equals("fikri")))) {
+        if (TokoFurnitureDB.loginAdmin(usernameTextField.getText(), passTextField.getText())) {
             login.isLogin = true;
+            JOptionPane.showMessageDialog(null, "Berhasil login!!");
             new Administrator().setVisible(true);
-            
         } else {
-            JOptionPane.showMessageDialog(null, "Username atau Password salah silakan periksa kembali");
+            JOptionPane.showMessageDialog(null, "Login gagal periksa kembali username dan password");
         }
+        
+        usernameTextField.setText("");
+        passTextField.setText("");
+       
     }//GEN-LAST:event_buttonLoginActionPerformed
 
 

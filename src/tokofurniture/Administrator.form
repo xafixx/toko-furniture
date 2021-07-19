@@ -78,7 +78,7 @@
                           <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                           <Component id="tambahButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
-                          <Component id="editButtin" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="editButton" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                           <Component id="hapusButton" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
@@ -130,7 +130,7 @@
                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="tambahButton" min="-2" max="-2" attributes="0"/>
-                      <Component id="editButtin" min="-2" max="-2" attributes="0"/>
+                      <Component id="editButton" min="-2" max="-2" attributes="0"/>
                       <Component id="hapusButton" min="-2" max="-2" attributes="0"/>
                       <Component id="clearButton1" min="-2" max="-2" attributes="0"/>
                       <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
@@ -181,7 +181,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="hargaBarangTextField">
         </Component>
-        <Component class="javax.swing.JButton" name="editButtin">
+        <Component class="javax.swing.JButton" name="editButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="0"/>
@@ -189,7 +189,7 @@
             <Property name="text" type="java.lang.String" value="EDIT"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButtinActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="tambahButton">

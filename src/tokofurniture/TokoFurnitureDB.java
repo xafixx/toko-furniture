@@ -16,7 +16,31 @@ public class TokoFurnitureDB {
     
     private static Connection connection;
     private static ConnectionClass connect = new ConnectionClass(connection);
-       
+    
+    public static boolean loginAdmin(String username, String password){
+        try {
+            Connection con = connect.openConnection();
+         
+            PreparedStatement ps = con.prepareStatement(
+                    "SELECT * FROM admin where user=? and pass=?"
+            );
+            
+            ps.setString(1, username);
+            ps.setString(2, password);
+            
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+                return true;
+            } else {
+                return false;
+            }
+             
+        } catch (SQLException ex) {
+            Logger.getLogger(TokoFurnitureDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    
     public static void insertIntoDatabase(String namaBarang, int hargaBarang, int stok,  
                                            String deskripsi, FileInputStream fileGambar) 
     {
@@ -45,7 +69,7 @@ public class TokoFurnitureDB {
         }
     }
     
-    public static void updateToDatabase(int id_barang, String namaBarang, int hargaBarang, int stok,  
+    public static void updateToDatabase(int idBarang, String namaBarang, int hargaBarang, int stok,  
                                         String deskripsi, FileInputStream fileGambar) 
     {
         try {
@@ -60,7 +84,7 @@ public class TokoFurnitureDB {
             ps.setInt(2, hargaBarang);
             ps.setInt(3, stok);
             ps.setString(4, deskripsi);
-            ps.setInt(5, id_barang);
+            ps.setInt(5, idBarang);
             
             if(ps.executeUpdate()==1) {
                 JOptionPane.showMessageDialog(null, "Berasil mengedit data!!!");
@@ -73,7 +97,7 @@ public class TokoFurnitureDB {
         }
     }
     
-     public static void deleteFromDatabase(int id_barang) {
+     public static void deleteFromDatabase(int idBarang) {
         try {
             
             Connection con = connect.openConnection();
@@ -82,7 +106,7 @@ public class TokoFurnitureDB {
                     "DELETE from barang WHERE id_barang=?"
             );
             
-            ps.setInt(1, id_barang);
+            ps.setInt(1, idBarang);
             
             if(ps.executeUpdate()==1) {
                 JOptionPane.showMessageDialog(null, "Berhasil menghapus data");

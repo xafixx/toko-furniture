@@ -20,13 +20,12 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class Administrator extends javax.swing.JFrame {    
-    CardLayout cardLayout;
+    private CardLayout cardLayout;
     private DrawTable administrator = new DrawTable();
     private String path = null;
     private FileInputStream fimage = null;
     private File selectedImage;
-    ConnectionClass adminLogin = new ConnectionClass();
-    
+    private ConnectionClass adminLogin = new ConnectionClass();
     
     public Administrator() {
         initComponents();
@@ -50,7 +49,7 @@ public class Administrator extends javax.swing.JFrame {
         labelStok = new javax.swing.JLabel();
         namaBarangTextField = new javax.swing.JTextField();
         hargaBarangTextField = new javax.swing.JTextField();
-        editButtin = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
         tambahButton = new javax.swing.JButton();
         hapusButton = new javax.swing.JButton();
         labelDeskripsi = new javax.swing.JLabel();
@@ -84,11 +83,11 @@ public class Administrator extends javax.swing.JFrame {
         labelStok.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         labelStok.setText("STOK");
 
-        editButtin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        editButtin.setText("EDIT");
-        editButtin.addActionListener(new java.awt.event.ActionListener() {
+        editButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        editButton.setText("EDIT");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButtinActionPerformed(evt);
+                editButtonActionPerformed(evt);
             }
         });
 
@@ -205,7 +204,7 @@ public class Administrator extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(tambahButton)
                         .addGap(19, 19, 19)
-                        .addComponent(editButtin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
                         .addComponent(hapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
@@ -249,7 +248,7 @@ public class Administrator extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(panelAdminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tambahButton)
-                    .addComponent(editButtin)
+                    .addComponent(editButton)
                     .addComponent(hapusButton)
                     .addComponent(clearButton1)
                     .addComponent(logoutButton))
@@ -270,19 +269,21 @@ public class Administrator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-
-    
-    
-    
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
         adminLogin.isLogin = false;
         this.dispose();
     }//GEN-LAST:event_logoutButtonActionPerformed
     
+    private void clear(){
+        namaBarangTextField.setText("");
+        hargaBarangTextField.setText("");
+        stokTextField1.setText("");
+        deskripsiTextArea.setText("");
+    }
+    
     private void tambahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahButtonActionPerformed
         // TODO add your handling code here:
-        
         if (namaBarangTextField.getText().isEmpty()  || 
             hargaBarangTextField.getText().isEmpty() || 
             stokTextField1.getText().isEmpty() || 
@@ -365,8 +366,6 @@ public class Administrator extends javax.swing.JFrame {
 
     private void tableAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAdminMouseClicked
         // TODO add your handling code here:
-        
-        // buat objek baru
         administrator = new DrawTable(
                 tableAdmin, 
                 labelIdBarang, 
@@ -394,12 +393,11 @@ public class Administrator extends javax.swing.JFrame {
 
     private void clearButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButton1ActionPerformed
         // TODO add your handling code here:
-        
+        clear();
     }//GEN-LAST:event_clearButton1ActionPerformed
 
-    private void editButtinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtinActionPerformed
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
-        
         try{
             TokoFurnitureDB.updateToDatabase(
                 Integer.valueOf(labelIdBarang.getText()),
@@ -416,12 +414,8 @@ public class Administrator extends javax.swing.JFrame {
             );
         }
         administrator.showDataToTableAdmin(tableAdmin);
-        
-        namaBarangTextField.setText("");
-        hargaBarangTextField.setText("");
-        stokTextField1.setText("");
-        deskripsiTextArea.setText("");
-    }//GEN-LAST:event_editButtinActionPerformed
+        clear();
+    }//GEN-LAST:event_editButtonActionPerformed
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
@@ -429,11 +423,7 @@ public class Administrator extends javax.swing.JFrame {
             Integer.valueOf(labelIdBarang.getText())
         );
         administrator.showDataToTableAdmin(tableAdmin);
-        
-        namaBarangTextField.setText("");
-        hargaBarangTextField.setText("");
-        stokTextField1.setText("");
-        deskripsiTextArea.setText("");
+        clear();
     }//GEN-LAST:event_hapusButtonActionPerformed
 
     /**
@@ -727,13 +717,11 @@ public class Administrator extends javax.swing.JFrame {
         
     }
     
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonTambahGambar;
     private javax.swing.JButton clearButton1;
     private javax.swing.JTextArea deskripsiTextArea;
-    private javax.swing.JButton editButtin;
+    private javax.swing.JButton editButton;
     private javax.swing.JButton hapusButton;
     private javax.swing.JTextField hargaBarangTextField;
     private javax.swing.JScrollPane jScrollPane1;

@@ -23,7 +23,6 @@ import javax.swing.table.DefaultTableModel;
  * @author HP KOMPUTER
  */
 public class DrawTable{
-    
     private ConnectionClass connection = new ConnectionClass(); 
     private JTable table;
     private JLabel labelContaier;
@@ -31,6 +30,7 @@ public class DrawTable{
     private JTextField hargaBarangTextField;
     private JTextField stokTextField;
     private JTextArea deskripsiTextArea;
+    private DefaultTableModel model;
     
     /*Constructor*/
     public DrawTable() {
@@ -43,6 +43,7 @@ public class DrawTable{
     public DrawTable(JTable table, JLabel labelContainer, JTextField namaBarangTextField, 
             JTextField hargaBarangTextField, JTextField stokTextField, 
             JTextArea deskripsiTextArea) {
+        
         this.table = table;
         this.labelContaier = labelContainer;
         this.namaBarangTextField = namaBarangTextField;
@@ -70,7 +71,7 @@ public class DrawTable{
     
     public void tableClickedHome() {
         
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model = (DefaultTableModel) table.getModel();
         int myIndex = table.getSelectedRow();
         
         try{
@@ -92,7 +93,7 @@ public class DrawTable{
     }
     
     public void tableClickedAdmin() {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model = (DefaultTableModel) table.getModel();
         int myIndex = table.getSelectedRow();
         
         try{
@@ -109,7 +110,7 @@ public class DrawTable{
     // method untuk menampilkan data ke tabel admin
     public void showDataToTableHome(JTable table)  {
         
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model = (DefaultTableModel) table.getModel();
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         String title[] = {"NAMA BARANG", "HARGA BARANG", 
@@ -154,7 +155,7 @@ public class DrawTable{
     }
 
     public void showDataToTableAdmin(JTable table) {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model = (DefaultTableModel) table.getModel();
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         String title[] = {"ID BARANG", "NAMA BARANG", "HARGA BARANG", 
