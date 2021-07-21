@@ -271,8 +271,15 @@ public class Administrator extends javax.swing.JFrame {
     
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
-        adminLogin.isLogin = false;
-        this.dispose();
+       int confirm = JOptionPane.showConfirmDialog(this, "anda yakin ingin logout?", 
+               "Logout", JOptionPane.YES_NO_CANCEL_OPTION);
+        
+        if(confirm == JOptionPane.YES_OPTION){
+            adminLogin.isLogin = false;
+            dispose();
+        } else {
+            setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+        }
     }//GEN-LAST:event_logoutButtonActionPerformed
     
     private void clear(){
@@ -308,10 +315,7 @@ public class Administrator extends javax.swing.JFrame {
             }
 
             administrator.showDataToTableAdmin(tableAdmin);
-            namaBarangTextField.setText("");
-            hargaBarangTextField.setText("");
-            stokTextField1.setText("");
-            deskripsiTextArea.setText("");       
+            clear();     
         }
     }//GEN-LAST:event_tambahButtonActionPerformed
     
@@ -329,7 +333,6 @@ public class Administrator extends javax.swing.JFrame {
             }
         }while(selectedImage == null);
         
-
         path = selectedImage.getAbsolutePath();
             
         ImageIcon image = new ImageIcon(
