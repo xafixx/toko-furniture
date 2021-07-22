@@ -1,6 +1,5 @@
-========================
 PROJECT TOKO FURNITURE
-========================
+
 
 Project dibuat menggunakan Apache Netbeans IDE 12.3 Java/JDK 16
 
