@@ -28,20 +28,128 @@ public class Contact extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        panelContactLabel = new javax.swing.JLabel();
+        panelContactLabel1 = new javax.swing.JLabel();
+        panelContactWhatsappNo = new javax.swing.JLabel();
+        panelContactWhatsappLogo = new javax.swing.JLabel();
+        panelContactLabel2 = new javax.swing.JLabel();
+        panelContactLabel3 = new javax.swing.JLabel();
+        panelContactLabel4 = new javax.swing.JLabel();
+        panelContactLabel5 = new javax.swing.JLabel();
+        panelContactLabel6 = new javax.swing.JLabel();
+        panelContactWhatsappNo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(176, 187, 205));
 
+        panelContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel.setText("CONTACT US");
+
+        panelContactLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel1.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        panelContactWhatsappNo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactWhatsappNo.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactWhatsappNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactWhatsappNo.setText("0854-2212-9910");
+
+        panelContactWhatsappLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactWhatsappLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_whatsapp_50px.png"))); // NOI18N
+
+        panelContactLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel2.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel2.setText("Toko Furniture Jaya");
+
+        panelContactLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel3.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel3.setText("Purwokerto Square, The City Walk ");
+
+        panelContactLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel4.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel4.setText("Jl. D.I. Panjaitan");
+
+        panelContactLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel5.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel5.setText("Banyumas 53147, Indonesia");
+
+        panelContactLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactLabel6.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactLabel6.setText("tofu@dummy.com");
+
+        panelContactWhatsappNo1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        panelContactWhatsappNo1.setForeground(new java.awt.Color(237, 246, 255));
+        panelContactWhatsappNo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        panelContactWhatsappNo1.setText("+62 21 7278 0235");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(189, 189, 189)
+                .addComponent(panelContactWhatsappLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(panelContactLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelContactLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(panelContactLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelContactLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelContactLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelContactLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelContactWhatsappNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelContactLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(panelContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelContactLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactLabel4)
+                .addGap(1, 1, 1)
+                .addComponent(panelContactLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelContactWhatsappNo1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelContactWhatsappLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelContactLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,5 +203,15 @@ public class Contact extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel panelContactLabel;
+    private javax.swing.JLabel panelContactLabel1;
+    private javax.swing.JLabel panelContactLabel2;
+    private javax.swing.JLabel panelContactLabel3;
+    private javax.swing.JLabel panelContactLabel4;
+    private javax.swing.JLabel panelContactLabel5;
+    private javax.swing.JLabel panelContactLabel6;
+    private javax.swing.JLabel panelContactWhatsappLogo;
+    private javax.swing.JLabel panelContactWhatsappNo;
+    private javax.swing.JLabel panelContactWhatsappNo1;
     // End of variables declaration//GEN-END:variables
 }

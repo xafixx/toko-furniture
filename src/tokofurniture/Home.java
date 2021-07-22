@@ -17,7 +17,7 @@ public class Home extends javax.swing.JFrame {
     
     public Home() {
         initComponents();
-        System.out.println(login.isLogin);
+        System.out.println("Admin login?: " + login.isLogin);
         homepageTable.showDataToTableHome(tableHome);
         cardLayout = (CardLayout) (panelCard.getLayout());
     }
@@ -47,12 +47,17 @@ public class Home extends javax.swing.JFrame {
         buttonLogin = new javax.swing.JButton();
         passLogoLabel = new javax.swing.JLabel();
         usernameLogoLabel1 = new javax.swing.JLabel();
-        panelContact = new javax.swing.JPanel();
-        panelContactLabel = new javax.swing.JLabel();
-        panelContactWhatsappLogo = new javax.swing.JLabel();
-        panelContactWhatsappNo = new javax.swing.JLabel();
-        panelContactLabel1 = new javax.swing.JLabel();
         panelAbout = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         sidePanel = new javax.swing.JPanel();
         buttonHome = new javax.swing.JButton();
         buttonAdmin = new javax.swing.JButton();
@@ -187,69 +192,105 @@ public class Home extends javax.swing.JFrame {
 
         panelCard.add(panelLoginAdmin, "panelLoginAdmin");
 
-        panelContact.setBackground(new java.awt.Color(176, 187, 205));
-
-        panelContactLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        panelContactLabel.setForeground(new java.awt.Color(237, 246, 255));
-        panelContactLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelContactLabel.setText("HUBUNGI KAMI KE NOMOR WHATSAPP");
-
-        panelContactWhatsappLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelContactWhatsappLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_whatsapp_50px.png"))); // NOI18N
-
-        panelContactWhatsappNo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        panelContactWhatsappNo.setForeground(new java.awt.Color(237, 246, 255));
-        panelContactWhatsappNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelContactWhatsappNo.setText("0854-2212-9910");
-
-        panelContactLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        panelContactLabel1.setForeground(new java.awt.Color(237, 246, 255));
-        panelContactLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        panelContactLabel1.setText("DI BAWAH INI");
-
-        javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
-        panelContact.setLayout(panelContactLayout);
-        panelContactLayout.setHorizontalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelContactLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelContactLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addGap(245, 245, 245)
-                .addComponent(panelContactWhatsappLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
-        );
-        panelContactLayout.setVerticalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelContactLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelContactLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelContactWhatsappLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelContactWhatsappNo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(398, Short.MAX_VALUE))
-        );
-
-        panelCard.add(panelContact, "panelContact");
-
         panelAbout.setBackground(new java.awt.Color(176, 187, 205));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("SELAMAT DATANG DI TOFU");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Tofu merupakan aplikasi toko furniture ");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("yang menjual barang-barang furniture");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("dari Toko Furniture Jaya");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("kami menjual barang-barang furniture dengan");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("kualitas yang baik dan siap mengantarkan barang-barang");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("yang anda beli ke rumah anda");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("SELAMAT BERBELANJA");
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_delivery_100px.png"))); // NOI18N
 
         javax.swing.GroupLayout panelAboutLayout = new javax.swing.GroupLayout(panelAbout);
         panelAbout.setLayout(panelAboutLayout);
         panelAboutLayout.setHorizontalGroup(
             panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 786, Short.MAX_VALUE)
+            .addGroup(panelAboutLayout.createSequentialGroup()
+                .addGroup(panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAboutLayout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(jLabel3))
+                    .addGroup(panelAboutLayout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addGroup(panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)))
+                    .addGroup(panelAboutLayout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addGroup(panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         panelAboutLayout.setVerticalGroup(
             panelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGroup(panelAboutLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                .addGap(103, 103, 103))
         );
 
         panelCard.add(panelAbout, "panelAbout");
@@ -386,7 +427,6 @@ public class Home extends javax.swing.JFrame {
         
         usernameTextField.setText("");
         passTextField.setText("");
-       
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void buttonContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonContactActionPerformed
@@ -524,18 +564,23 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton buttonLogin;
     private javax.swing.JButton buttonPemesanan;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelLogo;
     private javax.swing.JLabel labelPhotoHome;
     private javax.swing.JPanel panelAbout;
     private javax.swing.JLabel panelAdminLabel;
     private javax.swing.JPanel panelCard;
-    private javax.swing.JPanel panelContact;
-    private javax.swing.JLabel panelContactLabel;
-    private javax.swing.JLabel panelContactLabel1;
-    private javax.swing.JLabel panelContactWhatsappLogo;
-    private javax.swing.JLabel panelContactWhatsappNo;
     private javax.swing.JPanel panelHome;
     private javax.swing.JPanel panelLoginAdmin;
     private javax.swing.JPanel panelLogo;

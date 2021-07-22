@@ -27,60 +27,101 @@ public class Pemesanan extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         panelContactWhatsappLogo = new javax.swing.JLabel();
         panelContactWhatsappNo = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         pembayaranConfirmationPanel.setBackground(new java.awt.Color(176, 187, 205));
         pembayaranConfirmationPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SILAKAN LAKUKAN PEMBAYARAN KE NOMOR REKENING");
-        pembayaranConfirmationPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 41, -1, -1));
+        jLabel1.setText("NOMOR WHATSAPP DI BAWAH INI");
+        pembayaranConfirmationPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 370, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("TOKO FURI");
-        pembayaranConfirmationPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 92, 169, -1));
+        jLabel2.setText("TOKO FURNUTURE");
+        pembayaranConfirmationPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 230, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("ATAS NAMA    :");
-        pembayaranConfirmationPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 92, 200, -1));
+        jLabel3.setText("PEMESANAN");
+        pembayaranConfirmationPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("NO.REKENING  :");
-        pembayaranConfirmationPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 142, -1, -1));
+        pembayaranConfirmationPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("023 827 2088");
-        pembayaranConfirmationPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 142, 164, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("SETELAH MELAKUKAN PEMBAYARAN KIRIM BUKTI PEMBAYARAN KE WHATSAPP");
-        pembayaranConfirmationPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 243, -1, -1));
+        pembayaranConfirmationPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 164, -1));
 
         panelContactWhatsappLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panelContactWhatsappLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_whatsapp_50px.png"))); // NOI18N
-        pembayaranConfirmationPanel.add(panelContactWhatsappLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 291, -1, 59));
+        pembayaranConfirmationPanel.add(panelContactWhatsappLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, 59));
 
         panelContactWhatsappNo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         panelContactWhatsappNo.setForeground(new java.awt.Color(237, 246, 255));
         panelContactWhatsappNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panelContactWhatsappNo.setText("0822-9111-2210");
-        pembayaranConfirmationPanel.add(panelContactWhatsappNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 291, 235, 59));
+        pembayaranConfirmationPanel.add(panelContactWhatsappNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 235, 59));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pembayaranConfirmationPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 490, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("DAN KONFIRMASI PEMBAYARAN SILAKAN HUBUNGI");
+        pembayaranConfirmationPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 500, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("ATAS NAMA    :");
+        pembayaranConfirmationPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 200, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setText("NOMOR REKENING KAMI");
+        pembayaranConfirmationPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 330, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("BARANG YANG DIPESAN AKAN DIKIRIM MAKSIMAL H+2");
+        pembayaranConfirmationPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 530, -1));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("UNTUK INFORMASI PEMESANAN, PEMBAYARAN ");
+        pembayaranConfirmationPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 490, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("BIAYA KIRIM Rp 50.000 SELURUH PURWOKERTO");
+        pembayaranConfirmationPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 440, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,11 +179,17 @@ public class Pemesanan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel panelContactWhatsappLogo;
     private javax.swing.JLabel panelContactWhatsappNo;
     private javax.swing.JPanel pembayaranConfirmationPanel;

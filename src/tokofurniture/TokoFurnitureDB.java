@@ -70,7 +70,7 @@ public class TokoFurnitureDB {
     }
     
     public static void updateToDatabase(int idBarang, String namaBarang, int hargaBarang, int stok,  
-                                        String deskripsi, FileInputStream fileGambar) 
+                                        String deskripsi) 
     {
         try {
             Connection con = connect.openConnection();

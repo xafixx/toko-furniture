@@ -29,7 +29,7 @@ public class Administrator extends javax.swing.JFrame {
     
     public Administrator() {
         initComponents();
-        System.out.println(adminLogin.isLogin);
+        System.out.println("Apakah admin login? : " + adminLogin.isLogin);
         administrator.showDataToTableAdmin(tableAdmin);
     }
 
@@ -58,7 +58,7 @@ public class Administrator extends javax.swing.JFrame {
         clearButton1 = new javax.swing.JButton();
         panelAddImage = new javax.swing.JPanel();
         labelAddImage = new javax.swing.JLabel();
-        stokTextField1 = new javax.swing.JTextField();
+        stokTextField = new javax.swing.JTextField();
         scrollPanelAdmin = new javax.swing.JScrollPane();
         tableAdmin = new javax.swing.JTable();
         logoutButton = new javax.swing.JButton();
@@ -192,7 +192,7 @@ public class Administrator extends javax.swing.JFrame {
                         .addGroup(panelAdminDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(namaBarangTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(hargaBarangTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stokTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(stokTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addComponent(labelIdBarang)
@@ -235,7 +235,7 @@ public class Administrator extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(hargaBarangTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(stokTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(stokTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(labelIdBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +285,7 @@ public class Administrator extends javax.swing.JFrame {
     private void clear(){
         namaBarangTextField.setText("");
         hargaBarangTextField.setText("");
-        stokTextField1.setText("");
+        stokTextField.setText("");
         deskripsiTextArea.setText("");
     }
     
@@ -293,7 +293,7 @@ public class Administrator extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (namaBarangTextField.getText().isEmpty()  || 
             hargaBarangTextField.getText().isEmpty() || 
-            stokTextField1.getText().isEmpty() || 
+            stokTextField.getText().isEmpty() || 
             deskripsiTextArea.getText().isEmpty() || fimage == null) 
         {
             JOptionPane.showMessageDialog(this, "Semua data harus terisi!!!");
@@ -302,7 +302,7 @@ public class Administrator extends javax.swing.JFrame {
                 TokoFurnitureDB.insertIntoDatabase(
                        namaBarangTextField.getText(), 
                        Integer.valueOf(hargaBarangTextField.getText()), 
-                       Integer.valueOf(stokTextField1.getText()), 
+                       Integer.valueOf(stokTextField.getText()), 
                        deskripsiTextArea.getText(), 
                        fimage
                 );
@@ -358,7 +358,7 @@ public class Administrator extends javax.swing.JFrame {
                 labelIdBarang, 
                 namaBarangTextField,
                 hargaBarangTextField, 
-                stokTextField1, 
+                stokTextField, 
                 deskripsiTextArea
         );
         
@@ -390,8 +390,8 @@ public class Administrator extends javax.swing.JFrame {
                 Integer.valueOf(labelIdBarang.getText()),
                 namaBarangTextField.getText(), 
                 Integer.valueOf(hargaBarangTextField.getText()), 
-                Integer.valueOf(stokTextField1.getText()),
-                deskripsiTextArea.getText(), fimage
+                Integer.valueOf(stokTextField.getText()),
+                deskripsiTextArea.getText()
             );
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(
@@ -724,7 +724,7 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JPanel panelAdminDashboard;
     private javax.swing.JLabel panelAdminDashboardLabel;
     private javax.swing.JScrollPane scrollPanelAdmin;
-    private javax.swing.JTextField stokTextField1;
+    private javax.swing.JTextField stokTextField;
     private javax.swing.JTable tableAdmin;
     private javax.swing.JButton tambahButton;
     // End of variables declaration//GEN-END:variables
