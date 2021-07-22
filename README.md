@@ -16,6 +16,7 @@ pada Apache Netbeans IDE:
           yang berada di folder \Project_TokoFurniture\dist\lib\
 
 Jika ingin menjalankan jar file tanpa IDE:
+
     - Export database tokofurnituredb.sql
     - Buka cmd menuju ke \Project_TokoFurniture\dist\
     - Terdapat file Project_TokoFurniture.jar
