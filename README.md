@@ -1,7 +1,7 @@
 PROJECT TOKO FURNITURE
 
 
-Project dibuat menggunakan Apache Netbeans IDE 12.3 Java/JDK 16
+Project dibuat menggunakan Apache Netbeans IDE 12.3 Java/JDK 16, database Mysql(xampp v3.3.0)
 
 Hal-hal yang perlu dilakukan sebelum membuka/menjalankan project
 pada Apache Netbeans IDE:
@@ -17,7 +17,8 @@ pada Apache Netbeans IDE:
 
 Jika ingin menjalankan jar file tanpa IDE:
 
-    - Import database tokofurnituredb.sql
+    - Jalankan xampp start Mysql
+    - Import database tokofurnituredb.sql di folder \database\
     - Buka cmd menuju ke \Project_TokoFurniture\dist\
     - Terdapat file Project_TokoFurniture.jar
     - jalankan dengan perintah java -jarProject_TokoFurniture.jar [ENTER] 
