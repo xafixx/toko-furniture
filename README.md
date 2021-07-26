@@ -21,19 +21,19 @@ Project dibuat menggunakan Apache Netbeans IDE 12.3 Java/JDK 16, database Mysql(
     - Jalankan dengan perintah java -jarProject_TokoFurniture.jar [ENTER] 
 ## Tampilan Antarmuka
    ### Homepage
-      ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/1.JPG)
+   ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/1.JPG)
       
    ### Login Admin
-      ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/2.JPG)
+   ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/2.JPG)
    
    ### Dashboard Admin
-      ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/3.JPG)
+   ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/3.JPG)
    
    ### Pemesanan
-      ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/4.JPG)
+   ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/4.JPG)
    
    ### Contact
-      ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/5.JPG)
+   ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/5.JPG)
    
    ### About
-      ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/6.JPG)
+   ![alt text](https://github.com/xafixx/toko-furniture/blob/main/screenshot/6.JPG)
