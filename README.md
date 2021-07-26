@@ -10,7 +10,7 @@ pada Apache Netbeans IDE:
        file Mysql-connector berada di \Project_TokoFurniture\dist\lib\ 
        file berekstensi .jar.
        
-       untuk menambahkan libraries: 
+   * untuk menambahkan libraries: 
         - buka project pada Apache Netbeans klik kanan libraries,
           klik ADD JAR/Folder, pilih file mysql-connector-java-8.0.25.jar
           yang berada di folder \Project_TokoFurniture\dist\lib\
