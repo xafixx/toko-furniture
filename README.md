@@ -17,7 +17,7 @@ pada Apache Netbeans IDE:
 
 Jika ingin menjalankan jar file tanpa IDE:
 
-    - Export database tokofurnituredb.sql
+    - Import database tokofurnituredb.sql
     - Buka cmd menuju ke \Project_TokoFurniture\dist\
     - Terdapat file Project_TokoFurniture.jar
     - jalankan dengan perintah java -jarProject_TokoFurniture.jar [ENTER] 
