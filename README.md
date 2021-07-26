@@ -10,7 +10,7 @@ Project dibuat menggunakan Apache Netbeans IDE 12.3 Java/JDK 16, database Mysql(
    2. Untuk menambahkan libraries 
       - Buka project pada Apache Netbeans klik kanan libraries,
       - Klik ADD JAR/Folder, pilih file mysql-connector-java-8.0.25.jar
-      - file mysql-connector-java-8.0.25.jar berada di folder \Project_TokoFurniture\dist\lib\
+      - File mysql-connector-java-8.0.25.jar berada di folder \Project_TokoFurniture\dist\lib\
 
 ## Jika ingin menjalankan jar file tanpa IDE:
     - Pastikan menggunakan JDK 16
